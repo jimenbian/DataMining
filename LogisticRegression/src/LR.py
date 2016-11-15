@@ -53,8 +53,10 @@ def plotBestFit(weights):
     ax.scatter(xcord1, ycord1, s=30, c='red', marker='s')
     ax.scatter(xcord2, ycord2, s=30, c='green')
     x = arange(-3.0, 3.0, 0.1)   
-    y=(0.48*x+4.12414)/(0.616)
-#     y = (-weights[0]-weights[1]*x)/weights[2]    
+#    y=(0.48*x+4.12414)/(0.616)
+#     y = (-weights[0]-weights[1]*x)/weights[2]  
+    y = (-(float)(weights[0][0])-(float)(weights[1][0])*x)/(float)(weights[2][0])   
+
     ax.plot(x,y)
     plt.xlabel('X1'); plt.ylabel('X2');
     plt.show()    
